@@ -1,63 +1,58 @@
 
-let value = 0;
-let costOfApple = 10;
-let costOfBanana = 7 ;
-let costOfOranges = 5;
+var total = 0;
+var appleQuantity = 0;
+var orangeQuantity = 0;
+var bananaQuantity = 0;
+var wallet = 0;
 
-function incrementValue()
+ 
+function cash() {
+    wallet = document.querySelector('#cash-value').value;
+  }
+
+function addApple()
 {
-    /* yaha pr parsint is liye use kia he q k incre or dcre ka input
-         type text he us ko type number mn change kia he pehle*/
-    //  or phir us input ki .value ko equal kia he value veri k
-    // or phir us ki inhitial value 0 ki he ..
-    value = parseInt(document.querySelector('#number').value);
-    value++;
-    document.querySelector('#number').value = value;
-    // yaha par mene total k input ko  id di he or us bad us ki 
-    // value get ki he or us ki value  ko variable  value k equal rakha he
-    //   0r us ko multiply kia he cost of apple se..
-   document.querySelector('#total').value   = value * costOfApple;
-    
-
+    appleQuantity++;
+    document.getElementById('number').value = appleQuantity;
+    total= appleQuantity * 10 + orangeQuantity * 7 + bananaQuantity * 5;
+    document.getElementById('total-value').innerHTML=total;
 }
-function decrementValue()
+function addOrange()
 {
-    value = parseInt(document.querySelector('#number').value);
-    value--;
-    document.querySelector('#number').value = value;
-    document.querySelector('#total').value   = value * costOfApple;
-
-   
+    orangeQuantity++;
+    document.getElementById('number2').value = orangeQuantity;
+    total= appleQuantity * 10 + orangeQuantity * 7 + bananaQuantity * 5;
+    document.getElementById('total-value').innerHTML=total;
 }
-function add()
+function addBanana()
 {
-    value = parseInt(document.querySelector('#number2').value);
-    value++;
-    document.querySelector('#number2').value = value;
-     document.querySelector('#total').value   = value * costOfOranges; 
+    bananaQuantity++;
+    document.getElementById('number3').value = bananaQuantity;
+    total= appleQuantity * 10 + orangeQuantity * 7 + bananaQuantity * 5 ;
+    document.getElementById('total-value').innerHTML=total;
     
 }
-function minus()
+function minusApple()
 {
-    value = parseInt(document.querySelector('#number2').value);
-    value--;
-    document.querySelector('#number2').value = value;
-   document.querySelector('#total').value   = value * costOfOranges; 
-
+    appleQuantity--;
+    document.getElementById('number').value = appleQuantity;
+    total= appleQuantity * 10 + orangeQuantity * 7 + bananaQuantity * 5;
+    document.getElementById('total-value').innerHTML=total;
 }
-function addition()
+function minusOrange()
 {
-    value = parseInt(document.querySelector('#number3').value);
-    value++;
-    document.querySelector('#number3').value = value;
-   document.querySelector('#total').value   = value * costOfBanana; 
-   
+    
+    orangeQuantity--;
+    document.getElementById('number2').value = orangeQuantity;
+    total= appleQuantity * 10 + orangeQuantity * 7 + bananaQuantity * 5;
+    document.getElementById('total-value').innerHTML=total;
+  
 }
-function subtract()
+function minusBanana()
 {
-    value = parseInt(document.querySelector('#number3').value);
-    value--;
-    document.querySelector('#number3').value = value;
-   document.querySelector('#total').value   = value * costOfBanana; 
-
+  
+    bananaQuantity--;
+    document.getElementById('number3').value = bananaQuantity;
+    total= appleQuantity * 10 + orangeQuantity * 7 + bananaQuantity * 5 ;
+    document.getElementById('total-value').innerHTML=total;
 }
